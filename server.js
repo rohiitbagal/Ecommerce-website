@@ -7,8 +7,8 @@ import authRoutes from "./routes/authRoute.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import cors from "cors";
-import path from "path";
-import {fileURLToPath}from'url';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 //configure env
 dotenv.config();
 
@@ -16,8 +16,7 @@ dotenv.config();
 connectDB();
 
 //esmodule fix
-const __filename= fileURLToPath{import.meta.url};
-const __dirname=path.dirname{__filename};
+const __dirname = dirname(fileURLToPath(import.meta.url));
 //rest object
 const app = express();
 
