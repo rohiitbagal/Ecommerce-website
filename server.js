@@ -28,8 +28,9 @@ app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 //routes
-app.use("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+app.get('*', function (req, res) {
+  const index = path.join(process.env.PWD, '/build/index.html');
+  res.sendFile(index);
 });
 
 //rest api
