@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, '../client/build')));
 
 //routes
 app.get('*', function (req, res) {
-  const index = path.join(process.env.PWD, '/build/index.html');
+  const index = path.join(process.env, '/client/src/build/index.html');
   res.sendFile(index);
 });
 
