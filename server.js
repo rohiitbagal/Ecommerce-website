@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 //routes
 app.get('*', async (req,res) => {
-    res.sendFile(path.join(__dirname , './client/src/index.html'));
+    res.sendFile(path.join(__dirname , './client/build/index.html'));
 });
 
 //rest api
